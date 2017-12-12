@@ -1,7 +1,10 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -17,6 +20,9 @@
         "phpunit/phpunit": "~6.0"
     },
     "autoload": {
+        "files": [
+            "app/Common/helpers.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"
