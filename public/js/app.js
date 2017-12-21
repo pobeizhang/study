@@ -988,10 +988,10 @@ window.Vue = __webpack_require__(35);
  */
 
 Vue.component('example', __webpack_require__(38));
-
-var app = new Vue({
-  el: '#app'
-});
+//
+// const app = new Vue({
+//     el: '#app'
+// });
 
 /***/ }),
 /* 11 */
@@ -1023,18 +1023,20 @@ window.axios = __webpack_require__(16);
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
+ * Laravel 默认创建了一个 JavaScript 变量，此变量会从页面的元标签中取 CSRF 密钥，取不到就会报错
+ *
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
  * a simple convenience so we don't have to attach every token manually.
  */
 
-var token = document.head.querySelector('meta[name="csrf-token"]');
+/*let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}*/
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

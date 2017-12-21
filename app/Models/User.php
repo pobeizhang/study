@@ -37,6 +37,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * 用户默认头像
+     *
+     * @param string $size
+     *
+     * @return string
+     */
     public function gravatar ( $size = '100' )
     {
         $hash = md5( strtolower( trim( $this->attributes[ 'email' ] ) ) );
