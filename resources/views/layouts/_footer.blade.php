@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <footer class="footer">
         <small class="slogon">
-            <a href="http://www.dhbysf.com/">
+            <a href="{{ route('home') }}">
                 ArleyDu | 扶朕起来，朕还能学
             </a>
         </small>
