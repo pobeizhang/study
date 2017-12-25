@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Auth;
  */
 class SessionsController extends Controller
 {
+    /**
+     * SessionsController constructor.
+     */
     public function __construct ()
     {
         $this->middleware( 'guest', [
