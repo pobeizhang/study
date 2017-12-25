@@ -72,4 +72,24 @@ class User extends Authenticatable
     {
         $this->notify( new ResetPassword( $token ) );
     }
+
+    /**
+     * 模型关联
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function statuses ()
+    {
+        return $this->hasMany( Status::class );
+    }
+
+    /**
+     * 获取当前用户发表过的所有微博
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function feed ()
+    {
+        return $this->statuses()->orderBy( 'created_at', 'desc' );
+    }
 }
