@@ -95,7 +95,7 @@ class User extends Authenticatable
         array_push( $user_ids, Auth::user()->id );
 
         return Status::whereIn( 'user_id', $user_ids )
-            ->with( 'user' )
+            ->with( 'user' )//with预加载，避免n+1的情况
             ->orderBy( 'created_at', 'desc' );
     }
 
@@ -110,7 +110,7 @@ class User extends Authenticatable
     }
 
     /**
-     * 关注者
+     * 关注的用户
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
